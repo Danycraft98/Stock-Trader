@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask mplfinance App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-3 p-3 border-end">
+            <h4>Controls</h4>
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="ticker" class="form-label">Ticker:</label>
+                    <input type="text" class="form-control" id="ticker" name="ticker" value="{{ ticker }}">
+                </div>
+                <div class="mb-3">
+                    <label for="period" class="form-label">Period:</label>
+                    <input type="range" id="period" name="period" min="1" max="5" step="1" value="{{ period }}" class="form-range">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Plot</button>
+            </form>
+        </div>
+
+        <!-- Main Plot -->
+        <div class="col-9 p-3">
+            <h4>{{ ticker }} - {{ period }} Year Period</h4>
+            <img src="{{ url_for('static', filename='plots/' + ticker + '.png') }}" alt="Stock plot" class="img-fluid">
+        </div>
+    </div>
+</div>
+</body>
+</html>
