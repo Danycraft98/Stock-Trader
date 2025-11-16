@@ -4,7 +4,7 @@
 
 ---
 
-## **Features**
+## Features
 
 - Predict future stock prices using historical data
 - Display financial charts with candlesticks and volume using **mplfinance**
@@ -15,7 +15,7 @@
 
 ---
 
-## **Requirements**
+## Requirements
 
 - Python 3.10+
 - Flask
@@ -86,7 +86,7 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 
 ### Notes
 
-1. Use matplotlib.use('Agg') if running on a server without GUI to avoid threading issues.
+1. Use ```matplotlib.use('Agg')``` if running on a server without GUI to avoid threading issues.
 
 2. Ensure static/plots/ exists and has write permissions for saving plots.
 
